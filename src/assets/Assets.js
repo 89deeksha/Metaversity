@@ -1,0 +1,10 @@
+import logo from '../assets/logo.png'
+import im1 from '../assets/im1.png'
+import im2 from '../assets/im2.png'
+import im3 from '../assets/im3.png'
+import ssl from '../assets/ssl.png'
+import im4 from '../assets/im4.png'
+import im5 from '../assets/im5.png'
+import im6 from '../assets/im6.png'
+import im7 from '../assets/im7.png'
+export {logo,im1, im2, im3, ssl,im4,im5,im6,im7}
