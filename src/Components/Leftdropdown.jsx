@@ -8,6 +8,7 @@ function Leftdropdown() {
     setOpenDropdown(openDropdown === name ? null : name);
   };
 
+
   const renderIcon = (name) =>
     openDropdown === name ? (
       <FaChevronUp className="text-xs sm:text-sm" />
@@ -45,9 +46,9 @@ function Leftdropdown() {
         </div>
         {openDropdown === 'others' && (
           <ul className="bg-gray-200 text-black shadow-md z-10 w-full">
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer border-b border-gray-300">Chess</li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer border-b border-gray-300">Esports</li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Kabaddi</li>
+            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer border-b border-gray-300">Slot Game</li>
+            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer border-b border-gray-300">Fantasy Game</li>
+           
           </ul>
         )}
       </div>
@@ -63,9 +64,19 @@ function Leftdropdown() {
         </div>
         {openDropdown === 'all' && (
           <ul className="bg-gray-200 text-black shadow-md z-10 w-full">
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer border-b border-gray-300">Cricket</li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer border-b border-gray-300">Football</li>
-            <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Tennis</li>
+            {[
+              'Politics','Cricket','Football','Tennis','Table Tennis','Badminton','E-soccer','Basket Ball','Volley Ball','Snooker',
+            'Ice Hockey','E Games','Futsal','Handball','Kabaddi','Golf','Rugby League','Boxing','Beach Volly Ball','Mixed Matial Art','MotoGP','Chess','Cycling','Motorbikes',
+            'Athletics','Basketball 3x3','Sumo','Virtual Games','Wrestling','Basball'
+            ].map((items,index)=>(
+<li key={index} className="px-4 py-2 font-medium hover:bg-gray-100 cursor-pointer border-b border-gray-300">{items}</li>
+            ))
+            
+            
+            
+            }
+            
+           
           </ul>
         )}
       </div>

@@ -9,32 +9,32 @@ const matches = [
   },
   {
     game: "Sydney United 58 FC - St George FC / 03/08/2025 10:30:00",
-    status: "tv",
+    status: "live",
     odds: { '1': 11.72, x: 1.14, '2': 11.72 }
   },
   {
     game: "Balcatta W - UWA Nedlands W / 03/08/2025 12:30:00",
-    status: "locked",
+    status: "live",
     odds: { '1': null, x: 'locked', '2': 'locked' }
   },
   {
     game: "Balcatta W - UWA Nedlands W / 03/08/2025 12:30:00",
-    status: "locked",
+    status: "live",
     odds: { '1': null, x: 'locked', '2': 'locked' }
   },
   {
     game: "Balcatta W - UWA Nedlands W / 03/08/2025 12:30:00",
-    status: "locked",
+    status: "live",
     odds: { '1': null, x: 'locked', '2': 'locked' }
   },
   {
     game: "Balcatta W - UWA Nedlands W / 03/08/2025 12:30:00",
-    status: "locked",
+    status: "live",
     odds: { '1': null, x: 'locked', '2': 'locked' }
   },
   {
     game: "Balcatta W - UWA Nedlands W / 03/08/2025 12:30:00",
-    status: "locked",
+    status: "live",
     odds: { '1': null, x: 'locked', '2': 'locked' }
   },
   {
@@ -69,7 +69,7 @@ const getStatusIcon = (status) => {
 const renderOdds = (value) => {
   if (value === 'locked') {
     return (
-      <div className="bg-gray-800 text-white text-sm flex items-center justify-center h-10">
+      <div className="bg-gray-800 text-white text-sm flex items-center justify-center h-10 ">
         <FaLock />
       </div>
     );
@@ -88,11 +88,11 @@ const renderOdds = (value) => {
 
 const Data = () => {
   return (
-    <div className="overflow-x-auto w-full">
+    <div className="overflow-x-auto w-full mt-2">
       <table className="min-w-full border border-gray-300">
         <thead className="bg-gray-200 text-sm">
           <tr>
-            <th className="text-left px-2 py-2 border-r border-gray-400">Game</th>
+            <th className="text-left px-2 py-2 font-bold text-sm border-r border-gray-400">Game</th>
             <th className="px-2 py-2 border-r border-gray-400 w-12"></th>
             <th className="px-2 py-2 border-r border-gray-400 w-16">1</th>
             <th className="px-2 py-2 border-r border-gray-400 w-16">X</th>
