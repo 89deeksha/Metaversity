@@ -5,7 +5,7 @@ const matches = [
   {
     game: "Redlands United - Ipswich FC / 03/08/2025 10:30:00",
     status: "live",
-    odds: { '1': 7.91, x: 1.25, '2': 8.44 }
+    odds: { '1': 7.91, x: 1.25, '2': 8.44 },
   },
   {
     game: "Sydney United 58 FC - St George FC / 03/08/2025 10:30:00",
@@ -15,48 +15,65 @@ const matches = [
   {
     game: "Balcatta W - UWA Nedlands W / 03/08/2025 12:30:00",
     status: "live",
-    odds: { '1': null, x: 'locked', '2': 'locked' }
+    odds: { '1': null, x: 'locked', '2': 90.12 }
   },
   {
-    game: "Balcatta W - UWA Nedlands W / 03/08/2025 12:30:00",
+    game: "Redlands United - Ipswich FC / 03/08/2025 10:30:00",
     status: "live",
-    odds: { '1': null, x: 'locked', '2': 'locked' }
-  },
-  {
-    game: "Balcatta W - UWA Nedlands W / 03/08/2025 12:30:00",
-    status: "live",
-    odds: { '1': null, x: 'locked', '2': 'locked' }
-  },
-  {
-    game: "Balcatta W - UWA Nedlands W / 03/08/2025 12:30:00",
-    status: "live",
-    odds: { '1': null, x: 'locked', '2': 'locked' }
-  },
-  {
-    game: "Balcatta W - UWA Nedlands W / 03/08/2025 12:30:00",
-    status: "live",
-    odds: { '1': null, x: 'locked', '2': 'locked' }
-  },
-  {
-    game: "Balcatta W - UWA Nedlands W / 03/08/2025 12:30:00",
-    status: "locked",
-    odds: { '1': null, x: 'locked', '2': 'locked' }
-  },
-  {
-    game: "Balcatta W - UWA Nedlands W / 03/08/2025 12:30:00",
-    status: "locked",
-    odds: { '1': null, x: 'locked', '2': 'locked' }
+    odds: { '1': 7.91, x: 1.25, '2': 8.44 },
   },
   {
     game: "Sydney United 58 FC - St George FC / 03/08/2025 10:30:00",
-    status: "tv",
+    status: "live",
     odds: { '1': 11.72, x: 1.14, '2': 11.72 }
   },
   {
+    game: "Balcatta W - UWA Nedlands W / 03/08/2025 12:30:00",
+    status: "live",
+    odds: { '1': null, x: 'locked', '2': 90.12 }
+  },
+  {
+    game: "Redlands United - Ipswich FC / 03/08/2025 10:30:00",
+    status: "live",
+    odds: { '1': 7.91, x: 1.25, '2': 8.44 },
+  },
+  {
     game: "Sydney United 58 FC - St George FC / 03/08/2025 10:30:00",
-    status: "tv",
+    status: "live",
     odds: { '1': 11.72, x: 1.14, '2': 11.72 }
   },
+  {
+    game: "Balcatta W - UWA Nedlands W / 03/08/2025 12:30:00",
+    status: "live",
+    odds: { '1': null, x: 'locked', '2': 90.12 }
+  },
+  {
+    game: "Redlands United - Ipswich FC / 03/08/2025 10:30:00",
+    status: "live",
+    odds: { '1': 7.91, x: 1.25, '2': 8.44 },
+  },
+  {
+    game: "Sydney United 58 FC - St George FC / 03/08/2025 10:30:00",
+    status: "live",
+    odds: { '1': 11.72, x: 1.14, '2': 11.72 }
+  },
+  {
+    game: "Balcatta W - UWA Nedlands W / 03/08/2025 12:30:00",
+    status: "live",
+    odds: { '1': null, x: 'locked', '2': 90.12 }
+  },
+  {
+    game: "Redlands United - Ipswich FC / 03/08/2025 10:30:00",
+    status: "live",
+    odds: { '1': 7.91, x: 1.25, '2': 8.44 },
+  },
+  {
+    game: "Sydney United 58 FC - St George FC / 03/08/2025 10:30:00",
+    status: "live",
+    odds: { '1': 11.72, x: 1.14, '2': 11.72 }
+  },
+  
+  // ...more items
 ];
 
 const getStatusIcon = (status) => {
@@ -69,18 +86,18 @@ const getStatusIcon = (status) => {
 const renderOdds = (value) => {
   if (value === 'locked') {
     return (
-      <div className="bg-gray-800 text-white text-sm flex items-center justify-center h-10 ">
+      <div className="bg-gray-800 text-white text-sm flex items-center justify-center h-10 w-full">
         <FaLock />
       </div>
     );
   }
 
   if (value === null || value === '-') {
-    return <div className="h-10 flex items-center justify-center">-</div>;
+    return <div className="h-10 flex items-center justify-center w-full">-</div>;
   }
 
   return (
-    <div className="h-10 flex items-center justify-center bg-blue-200 text-sm font-semibold px-2 border-r border-white">
+    <div className="h-10 flex items-center justify-center text-sm font-semibold px-2 border-r border-white w-full">
       {value}
     </div>
   );
@@ -89,24 +106,31 @@ const renderOdds = (value) => {
 const Data = () => {
   return (
     <div className="overflow-x-auto w-full mt-2">
-      <table className="min-w-full border border-gray-300">
-        <thead className="bg-gray-200 text-sm">
+      <table className="min-w-full">
+        <thead>
           <tr>
-            <th className="text-left px-2 py-2 font-bold text-sm border-r border-gray-400">Game</th>
-            <th className="px-2 py-2 border-r border-gray-400 w-12"></th>
-            <th className="px-2 py-2 border-r border-gray-400 w-16">1</th>
-            <th className="px-2 py-2 border-r border-gray-400 w-16">X</th>
-            <th className="px-2 py-2 w-16">2</th>
+            <th className="text-left px-2 py-2 font-sm text-sm">Game</th>
+            <th className="px-2 py-2 w-12"></th>
+            <th colSpan="2" className="px-2 py-2 w-32 text-center">1</th>
+            <th colSpan="2" className="px-2 py-2 w-32 text-center">X</th>
+            <th colSpan="2" className="px-2 py-2 w-32 text-center">2</th>
           </tr>
+          
         </thead>
         <tbody>
           {matches.map((match, idx) => (
             <tr key={idx} className="border-t border-gray-300">
               <td className="text-sm px-2 py-2">{match.game}</td>
               <td className="text-center">{getStatusIcon(match.status)}</td>
-              <td>{renderOdds(match.odds['1'])}</td>
-              <td>{renderOdds(match.odds['x'])}</td>
-              <td>{renderOdds(match.odds['2'])}</td>
+             
+              <td className='bg-[rgb(114,187,239)]'>{renderOdds(match.odds['1'])}</td>
+              <td className='bg-[rgb(250,169,186)]'>{renderOdds(match.odds['2'])}</td>
+              <td className='bg-[rgb(114,187,239)]' >{renderOdds(match.odds['1'])}</td>
+              <td className='bg-[rgb(250,169,186)]' >{renderOdds(match.odds['1'])}</td>
+              <td className='bg-[rgb(114,187,239)]'>{renderOdds(match.odds['2'])}</td>
+              <td className='bg-[rgb(250,169,186)]'>{renderOdds(match.odds['1'])}</td>
+              
+
             </tr>
           ))}
         </tbody>
